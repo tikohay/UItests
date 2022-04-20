@@ -8,29 +8,73 @@
 import XCTest
 @testable import Lesson5
 
+class TestUserView: UserInputView {
+    
+    var title: String?
+    var expectation: XCTestExpectation?
+    
+    func didGetUsers() {
+        title = "test success"
+        expectation?.fulfill()
+    }
+}
+
 class Lesson5Tests: XCTestCase {
-
+    
+    let expectation = XCTestExpectation(description: "Lesson5Tests")
+    
+    var userView: TestUserView!
+    var networkService: NetworkService!
+    var presenter: UserPresenter!
+    
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        super.setUp()
+        userView = TestUserView()
+        networkService = NetworkService()
+        presenter = UserPresenter(view: userView, networkService: networkService)
     }
-
+    
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        super.tearDown()
+        userView = nil
+        networkService = nil
+        presenter = nil
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    
+    func testIsModuleIsNotNil() {
+        XCTAssertNotNil(userView)
+        XCTAssertNotNil(networkService)
+        XCTAssertNotNil(presenter)
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    func testGettingUsers() {
+        userView.expectation = expectation
+        presenter.viewDidLoad()
+        self.wait(for: [self.expectation], timeout: 5.0)
+        XCTAssertEqual(self.userView.title, "test success")
+    }
+    
+    func testGettingData() {
+        if let data = networkService.getData(from: "https://jsonplaceholder.typicode.com/users") {
+            print(data)
+        } else {
+            XCTFail()
         }
     }
-
+    
+    func testGettingUsersFromData() {
+        if let data = networkService.getData(from: "https://jsonplaceholder.typicode.com/users") {
+            networkService.parseFrom(data: data, type: [UserData].self) { result in
+                switch result {
+                case .success(let users):
+                    print(users)
+                case .failure(let error):
+                    print(error)
+                    XCTFail()
+                }
+            }
+        } else {
+            XCTFail()
+        }
+    }
 }
