@@ -19,7 +19,7 @@ class TestUserView: UserInputView {
     }
 }
 
-class Lesson5Tests: XCTestCase {
+class UserModuleTests: XCTestCase {
     
     let expectation = XCTestExpectation(description: "Lesson5Tests")
     
