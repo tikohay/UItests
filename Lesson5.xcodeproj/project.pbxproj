@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E819C92628103BA3000664B8 /* NetworkService2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E819C92528103BA3000664B8 /* NetworkService2.swift */; };
-		E819C92828104778000664B8 /* LessonPracticeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E819C92728104778000664B8 /* LessonPracticeTest.swift */; };
+		E819C92828104778000664B8 /* LessonPracticeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E819C92728104778000664B8 /* LessonPracticeTests.swift */; };
 		E81CC1A327FDB7190075BD54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81CC1A227FDB7190075BD54 /* AppDelegate.swift */; };
 		E81CC1A527FDB7190075BD54 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81CC1A427FDB7190075BD54 /* SceneDelegate.swift */; };
 		E81CC1A727FDB7190075BD54 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81CC1A627FDB7190075BD54 /* UserViewController.swift */; };
@@ -48,7 +48,7 @@
 
 /* Begin PBXFileReference section */
 		E819C92528103BA3000664B8 /* NetworkService2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService2.swift; sourceTree = "<group>"; };
-		E819C92728104778000664B8 /* LessonPracticeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonPracticeTest.swift; sourceTree = "<group>"; };
+		E819C92728104778000664B8 /* LessonPracticeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonPracticeTests.swift; sourceTree = "<group>"; };
 		E81CC19F27FDB7190075BD54 /* Lesson5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lesson5.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E81CC1A227FDB7190075BD54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E81CC1A427FDB7190075BD54 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -148,7 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				E81CC1B927FDB71B0075BD54 /* Lesson5Tests.swift */,
-				E819C92728104778000664B8 /* LessonPracticeTest.swift */,
+				E819C92728104778000664B8 /* LessonPracticeTests.swift */,
 			);
 			path = Lesson5Tests;
 			sourceTree = "<group>";
@@ -375,7 +375,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E819C92828104778000664B8 /* LessonPracticeTest.swift in Sources */,
+				E819C92828104778000664B8 /* LessonPracticeTests.swift in Sources */,
 				E81CC1BA27FDB71B0075BD54 /* Lesson5Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
